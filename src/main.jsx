@@ -1,13 +1,12 @@
 import React from 'react'
-import { createRoot } from 'react-dom/client'
+import { createRoot } from 'react-dom/client' // Assicurati che ci siano le graffe
 import App from './App.jsx'
 
 const container = document.getElementById('root');
-if (container) {
-  const root = createRoot(container);
-  root.render(
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>
-  );
-}
+const root = createRoot(container);
+
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);

@@ -210,7 +210,7 @@ export default function App() {
 
   const PlayerBtn = ({ p, size = "sm" }) => {
     const isSel = sel.id === p.id;
-    const w = size === "md" ? "w-28" : "w-20";
+    const w = size === "md" ? "w-36" : "w-28";
     return (
       <button onClick={() => setSel(p)}
         className={`${w} rounded-xl border-2 p-1.5 transition-all hover:scale-105 shadow cursor-pointer
@@ -223,23 +223,23 @@ export default function App() {
             <span className="text-xl">🌍</span>
           </div>
         ) : (
-          <div className="h-10">
+          <div className="h-14">
             <ResponsiveContainer width="100%" height="100%">
               <PieChart>
-                <Pie data={p.alloc} cx="50%" cy="50%" innerRadius={8} outerRadius={18} paddingAngle={2} dataKey="value">
+                <Pie data={p.alloc} cx="50%" cy="50%" innerRadius={12} outerRadius={24} paddingAngle={2} dataKey="value">
                   {p.alloc.map((e, i) => <Cell key={i} fill={e.color} />)}
                 </Pie>
               </PieChart>
             </ResponsiveContainer>
           </div>
         )}
-        <div className="text-[7px] font-black text-center text-slate-800 leading-tight mt-0.5 px-0.5 truncate">{p.name}</div>
+        <div className="text-[9px] font-black text-center text-slate-800 leading-tight mt-0.5 px-0.5 truncate">{p.name}</div>
       </button>
     );
   };
 
   const Campo = () => (
-    <div className="relative mx-auto max-w-xs rounded-2xl overflow-hidden shadow-2xl"
+    <div className="relative w-full rounded-2xl overflow-hidden shadow-2xl"
       style={{ background: "linear-gradient(180deg, #14532d 0%, #166534 35%, #15803d 50%, #166534 65%, #14532d 100%)" }}>
       <div className="absolute inset-0 pointer-events-none opacity-10">
         <div className="absolute left-1/2 top-0 h-full w-px bg-white" />

@@ -304,7 +304,7 @@ export default function App() {
         <div className="flex items-center gap-3 mb-4">
           <span className="text-4xl">{p.emoji}</span>
           <div>
-            <div className="text-[10px] font-black text-blue-500 uppercase tracking-widest">{p.pos} #{p.id}</div>
+            <div className="text-[10px] font-black text-blue-500 uppercase tracking-widest">{p.pos}</div>
             <h2 className="text-2xl font-black text-slate-900">{p.name}</h2>
             <p className="text-slate-500 italic text-sm">{p.intencion}</p>
           </div>
@@ -398,9 +398,9 @@ export default function App() {
         </div>
 
         {view === "cancha" && (
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 items-start">
-            <Campo />
-            <Detail />
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-5 items-start">
+            <div className="lg:col-span-3"><Campo /></div>
+            <div className="lg:col-span-2"><Detail /></div>
           </div>
         )}
 

@@ -210,30 +210,30 @@ export default function App() {
 
   const PlayerBtn = ({ p, size = "sm" }) => {
     const isSel = sel.id === p.id;
-    const w = size === "md" ? "w-36" : "w-28";
+    const w = size === "md" ? "w-44" : "w-36";
     return (
       <button onClick={() => setSel(p)}
         className={`${w} rounded-xl border-2 p-1.5 transition-all hover:scale-105 shadow cursor-pointer
           ${p.isEzeiza
             ? isSel ? "border-yellow-500 ring-2 ring-yellow-300 bg-yellow-50" : "border-yellow-300 bg-yellow-50/60"
             : isSel ? "border-blue-500 ring-2 ring-blue-200 bg-white" : "border-slate-300 bg-white"}`}>
-        <div className="text-center text-base mb-0.5">{p.emoji}</div>
+        <div className="text-center text-lg mb-0.5">{p.emoji}</div>
         {p.isEzeiza ? (
           <div className="h-10 flex items-center justify-center">
             <span className="text-xl">🌍</span>
           </div>
         ) : (
-          <div className="h-14">
+          <div className="h-20">
             <ResponsiveContainer width="100%" height="100%">
               <PieChart>
-                <Pie data={p.alloc} cx="50%" cy="50%" innerRadius={12} outerRadius={24} paddingAngle={2} dataKey="value">
+                <Pie data={p.alloc} cx="50%" cy="50%" innerRadius={16} outerRadius={32} paddingAngle={2} dataKey="value">
                   {p.alloc.map((e, i) => <Cell key={i} fill={e.color} />)}
                 </Pie>
               </PieChart>
             </ResponsiveContainer>
           </div>
         )}
-        <div className="text-[9px] font-black text-center text-slate-800 leading-tight mt-0.5 px-0.5 truncate">{p.name}</div>
+        <div className="text-[11px] font-black text-center text-slate-800 leading-tight mt-0.5 px-0.5 truncate">{p.name}</div>
       </button>
     );
   };

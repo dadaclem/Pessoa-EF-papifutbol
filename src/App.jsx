@@ -377,9 +377,8 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-100 to-blue-50 p-4">
-      <div className="max-w-5xl mx-auto">
+      <div className="max-w-7xl mx-auto">
         <div className="text-center mb-6">
-          <div className="text-5xl mb-2">🇦🇷</div>
           <h1 className="text-3xl font-black text-slate-900">Portafolios Modelo</h1>
           <p className="text-slate-500 text-sm mt-1">El once ideal</p>
           <div className="mt-2 inline-flex items-center gap-2 bg-green-100 text-green-700 rounded-full px-4 py-1 text-sm font-black">

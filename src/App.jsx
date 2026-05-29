@@ -210,17 +210,17 @@ export default function App() {
 
   const PlayerBtn = ({ p, size = "sm" }) => {
     const isSel = sel.id === p.id;
-    const w = size === "md" ? "w-44" : "w-36";
+    const w = size === "md" ? "flex-1 max-w-[10rem]" : "flex-1 max-w-[8rem]";
     return (
       <button onClick={() => setSel(p)}
-        className={`${w} rounded-xl border-2 p-1.5 transition-all hover:scale-105 shadow cursor-pointer
+        className={`${w} rounded-xl border-2 p-2 transition-all hover:scale-105 shadow cursor-pointer
           ${p.isEzeiza
             ? isSel ? "border-yellow-500 ring-2 ring-yellow-300 bg-yellow-50" : "border-yellow-300 bg-yellow-50/60"
             : isSel ? "border-blue-500 ring-2 ring-blue-200 bg-white" : "border-slate-300 bg-white"}`}>
-        <div className="text-center text-lg mb-0.5">{p.emoji}</div>
+        <div className="text-center text-2xl mb-0.5">{p.emoji}</div>
         {p.isEzeiza ? (
-          <div className="h-10 flex items-center justify-center">
-            <span className="text-xl">🌍</span>
+          <div className="h-16 flex items-center justify-center">
+            <span className="text-6xl">🌍</span>
           </div>
         ) : (
           <div className="h-20">
@@ -248,22 +248,22 @@ export default function App() {
         <div className="absolute left-1/2 bottom-2 -translate-x-1/2 w-24 h-8 border border-b-0 border-white rounded-t-full" />
       </div>
       <div className="relative py-4 px-3 space-y-3">
-        <div className="flex justify-around items-center">
+        <div className="flex justify-center gap-3 items-center">
           {ROWS[6].map(p => <PlayerBtn key={p.id} p={p} />)}
         </div>
-        <div className="flex justify-center">
+        <div className="flex justify-center gap-3">
           <PlayerBtn p={ROWS[5][0]} size="md" />
         </div>
-        <div className="flex justify-around items-center">
+        <div className="flex justify-center gap-3 items-center">
           {ROWS[4].map(p => <PlayerBtn key={p.id} p={p} />)}
         </div>
-        <div className="flex justify-center">
+        <div className="flex justify-center gap-3">
           <PlayerBtn p={ROWS[3][0]} size="md" />
         </div>
-        <div className="flex justify-around items-center">
+        <div className="flex justify-center gap-3 items-center">
           {ROWS[2].map(p => <PlayerBtn key={p.id} p={p} />)}
         </div>
-        <div className="flex justify-center">
+        <div className="flex justify-center gap-3">
           <PlayerBtn p={ROWS[1][0]} size="md" />
         </div>
       </div>

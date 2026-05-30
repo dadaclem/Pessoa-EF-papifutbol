@@ -210,7 +210,7 @@ export default function App() {
 
   const PlayerBtn = ({ p, size = "sm" }) => {
     const isSel = sel.id === p.id;
-    const w = "w-36";
+    const w = size === "mid" ? "w-32 sm:w-40" : "w-28 sm:w-36";
     return (
       <button onClick={() => setSel(p)}
         className={`${w} rounded-xl border-2 p-2 transition-all hover:scale-105 shadow cursor-pointer
@@ -219,8 +219,8 @@ export default function App() {
             : isSel ? "border-blue-500 ring-2 ring-blue-200 bg-white" : "border-slate-300 bg-white"}`}>
         <div className="text-center text-2xl mb-0.5">{p.emoji}</div>
         {p.isEzeiza ? (
-          <div className="h-16 flex items-center justify-center">
-            <span className="text-6xl">🌍</span>
+          <div className="h-20 flex items-center justify-center">
+            <span className="text-5xl">🌍</span>
           </div>
         ) : (
           <div className="h-20">
@@ -244,23 +244,23 @@ export default function App() {
       style={{ background: "linear-gradient(180deg, #14532d 0%, #166534 35%, #15803d 50%, #166534 65%, #14532d 100%)" }}>
       <div className="relative py-4 px-3 space-y-3">
         <div className="flex justify-center gap-3">
-          <PlayerBtn p={ROWS[1][0]} size="md" />
+          <PlayerBtn p={ROWS[1][0]} size="mid" />
         </div>
         <div className="flex justify-center gap-3 items-center">
           {ROWS[2].map(p => <PlayerBtn key={p.id} p={p} />)}
         </div>
         <div className="flex justify-center gap-3">
-          <PlayerBtn p={ROWS[3][0]} size="md" />
+          <PlayerBtn p={ROWS[3][0]} size="mid" />
         </div>
         <div className="flex justify-center gap-3 items-center">
-          <PlayerBtn p={ROWS[4][0]} />
+          <PlayerBtn p={ROWS[4][0]} size="mid" />
           <div className="w-16 h-16 rounded-full border-2 border-white/40 flex items-center justify-center flex-shrink-0">
             <div className="w-2 h-2 rounded-full bg-white/50" />
           </div>
-          <PlayerBtn p={ROWS[4][1]} />
+          <PlayerBtn p={ROWS[4][1]} size="mid" />
         </div>
         <div className="flex justify-center gap-3">
-          <PlayerBtn p={ROWS[5][0]} size="md" />
+          <PlayerBtn p={ROWS[5][0]} size="mid" />
         </div>
         <div className="flex justify-center gap-3 items-center">
           {ROWS[6].map(p => <PlayerBtn key={p.id} p={p} />)}

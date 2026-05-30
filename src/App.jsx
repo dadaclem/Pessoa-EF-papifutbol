@@ -248,23 +248,23 @@ export default function App() {
         <div className="absolute left-1/2 bottom-2 -translate-x-1/2 w-24 h-8 border border-b-0 border-white rounded-t-full" />
       </div>
       <div className="relative py-4 px-3 space-y-3">
-        <div className="flex justify-center gap-3">
-          <PlayerBtn p={ROWS[1][0]} size="md" />
-        </div>
         <div className="flex justify-center gap-3 items-center">
-          {ROWS[2].map(p => <PlayerBtn key={p.id} p={p} />)}
-        </div>
-        <div className="flex justify-center gap-3">
-          <PlayerBtn p={ROWS[3][0]} size="md" />
-        </div>
-        <div className="flex justify-center gap-3 items-center">
-          {ROWS[4].map(p => <PlayerBtn key={p.id} p={p} />)}
+          {ROWS[6].map(p => <PlayerBtn key={p.id} p={p} />)}
         </div>
         <div className="flex justify-center gap-3">
           <PlayerBtn p={ROWS[5][0]} size="md" />
         </div>
         <div className="flex justify-center gap-3 items-center">
-          {ROWS[6].map(p => <PlayerBtn key={p.id} p={p} />)}
+          {ROWS[4].map(p => <PlayerBtn key={p.id} p={p} />)}
+        </div>
+        <div className="flex justify-center gap-3">
+          <PlayerBtn p={ROWS[3][0]} size="md" />
+        </div>
+        <div className="flex justify-center gap-3 items-center">
+          {ROWS[2].map(p => <PlayerBtn key={p.id} p={p} />)}
+        </div>
+        <div className="flex justify-center gap-3">
+          <PlayerBtn p={ROWS[1][0]} size="md" />
         </div>
       </div>
       <div className="pb-3 text-center text-[9px] text-white/40 font-bold tracking-widest">
@@ -397,9 +397,9 @@ export default function App() {
         </div>
 
         {view === "cancha" && (
-          <div className="grid grid-cols-1 sm:grid-cols-5 gap-5 items-start">
-            <div className="sm:col-span-3"><Campo /></div>
-            <div className="sm:col-span-2"><Detail /></div>
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-5 items-start">
+            <div className="lg:col-span-3"><Campo /></div>
+            <div className="lg:col-span-2"><Detail /></div>
           </div>
         )}
 

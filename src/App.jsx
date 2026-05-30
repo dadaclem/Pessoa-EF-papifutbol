@@ -143,11 +143,11 @@ const ezeizaCards = [
 ];
 
 const ROWS = {
-  6: [portfolios[8], portfolios[10], portfolios[9]],
+  6: [portfolios[9], portfolios[10], portfolios[8]],
   5: [portfolios[7]],
-  4: [portfolios[5], portfolios[6]],
+  4: [portfolios[6], portfolios[5]],
   3: [portfolios[4]],
-  2: [portfolios[1], portfolios[3], portfolios[2]],
+  2: [portfolios[2], portfolios[3], portfolios[1]],
   1: [portfolios[0]],
 };
 
@@ -210,7 +210,7 @@ export default function App() {
 
   const PlayerBtn = ({ p, size = "sm" }) => {
     const isSel = sel.id === p.id;
-    const w = size === "md" ? "flex-1 max-w-[10rem]" : "flex-1 max-w-[8rem]";
+    const w = "w-36";
     return (
       <button onClick={() => setSel(p)}
         className={`${w} rounded-xl border-2 p-2 transition-all hover:scale-105 shadow cursor-pointer
@@ -234,6 +234,7 @@ export default function App() {
           </div>
         )}
         <div className="text-[11px] font-black text-center text-slate-800 leading-tight mt-0.5 px-0.5 truncate">{p.name}</div>
+        {p.pos && <div className="text-[8px] text-center text-slate-400 uppercase tracking-wide truncate px-0.5">{p.pos}</div>}
       </button>
     );
   };
@@ -248,23 +249,27 @@ export default function App() {
         <div className="absolute left-1/2 bottom-2 -translate-x-1/2 w-24 h-8 border border-b-0 border-white rounded-t-full" />
       </div>
       <div className="relative py-4 px-3 space-y-3">
-        <div className="flex justify-center gap-3 items-center">
-          {ROWS[6].map(p => <PlayerBtn key={p.id} p={p} />)}
-        </div>
         <div className="flex justify-center gap-3">
-          <PlayerBtn p={ROWS[5][0]} size="md" />
-        </div>
-        <div className="flex justify-center gap-3 items-center">
-          {ROWS[4].map(p => <PlayerBtn key={p.id} p={p} />)}
-        </div>
-        <div className="flex justify-center gap-3">
-          <PlayerBtn p={ROWS[3][0]} size="md" />
+          <PlayerBtn p={ROWS[1][0]} size="md" />
         </div>
         <div className="flex justify-center gap-3 items-center">
           {ROWS[2].map(p => <PlayerBtn key={p.id} p={p} />)}
         </div>
         <div className="flex justify-center gap-3">
-          <PlayerBtn p={ROWS[1][0]} size="md" />
+          <PlayerBtn p={ROWS[3][0]} size="md" />
+        </div>
+        <div className="flex justify-center gap-3 items-center">
+          <PlayerBtn p={ROWS[4][0]} />
+          <div className="w-16 h-16 rounded-full border-2 border-white/40 flex items-center justify-center flex-shrink-0">
+            <div className="w-2 h-2 rounded-full bg-white/50" />
+          </div>
+          <PlayerBtn p={ROWS[4][1]} />
+        </div>
+        <div className="flex justify-center gap-3">
+          <PlayerBtn p={ROWS[5][0]} size="md" />
+        </div>
+        <div className="flex justify-center gap-3 items-center">
+          {ROWS[6].map(p => <PlayerBtn key={p.id} p={p} />)}
         </div>
       </div>
       <div className="pb-3 text-center text-[9px] text-white/40 font-bold tracking-widest">
@@ -397,9 +402,9 @@ export default function App() {
         </div>
 
         {view === "cancha" && (
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-5 items-start">
-            <div className="lg:col-span-3"><Campo /></div>
-            <div className="lg:col-span-2"><Detail /></div>
+          <div className="grid grid-cols-1 sm:grid-cols-5 gap-5 items-start">
+            <div className="sm:col-span-3"><Campo /></div>
+            <div className="sm:col-span-2"><Detail /></div>
           </div>
         )}
 

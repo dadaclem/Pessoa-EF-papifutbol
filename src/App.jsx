@@ -242,12 +242,6 @@ export default function App() {
   const Campo = () => (
     <div className="relative w-full rounded-2xl overflow-hidden shadow-2xl"
       style={{ background: "linear-gradient(180deg, #14532d 0%, #166534 35%, #15803d 50%, #166534 65%, #14532d 100%)" }}>
-      <div className="absolute inset-0 pointer-events-none opacity-10">
-        <div className="absolute left-1/2 top-0 h-full w-px bg-white" />
-        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full border border-white" />
-        <div className="absolute left-1/2 top-2 -translate-x-1/2 w-24 h-8 border border-t-0 border-white rounded-b-full" />
-        <div className="absolute left-1/2 bottom-2 -translate-x-1/2 w-24 h-8 border border-b-0 border-white rounded-t-full" />
-      </div>
       <div className="relative py-4 px-3 space-y-3">
         <div className="flex justify-center gap-3">
           <PlayerBtn p={ROWS[1][0]} size="md" />
@@ -272,9 +266,7 @@ export default function App() {
           {ROWS[6].map(p => <PlayerBtn key={p.id} p={p} />)}
         </div>
       </div>
-      <div className="pb-3 text-center text-[9px] text-white/40 font-bold tracking-widest">
-        3 · 4 · 3
-      </div>
+      <div className="pb-3 text-center text-[9px] text-white/40 font-bold tracking-widest">3 · 4 · 3</div>
     </div>
   );
 
